@@ -10,7 +10,7 @@ readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=3.10"
 dependencies = [
-  "fonttools>=4.50",
+  "fonttools[woff]>=4.50",
   "shapely>=2.0",
   "jsonschema>=4.17",
 ]
