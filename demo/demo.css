@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Cistercian";
-  src: url("../dist/Cistercian-Regular.woff2?v=3") format("woff2");
+  src: url("../dist/Cistercian-Regular.woff2") format("woff2");
 }
 
 body {

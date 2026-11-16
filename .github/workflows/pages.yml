@@ -30,7 +30,7 @@ jobs:
         run: |
           cp demo/index.html site/index.html
           cp demo/demo.js site/demo.js
-          sed 's#url("../dist/Cistercian-Regular.woff2")#url("Cistercian-Regular.woff2")#' \
+          sed -E 's#url\("\.\./dist/Cistercian-Regular\.woff2[^"]*"\)#url("Cistercian-Regular.woff2")#' \
             demo/demo.css > site/demo.css
       - uses: actions/configure-pages@v5
         id: pages
