@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Cistercian digit geometry spec",
+  "type": "object",
+  "required": ["upm", "advance_width", "stroke_width", "stave", "quadrant", "digits"],
+  "additionalProperties": false,
+  "properties": {
+    "upm": { "type": "integer", "minimum": 1 },
+    "advance_width": { "type": "integer", "minimum": 0 },
+    "stroke_width": { "type": "number", "exclusiveMinimum": 0 },
+    "stave": {
+      "type": "object",
+      "required": ["x", "y_top", "y_bottom"],
+      "additionalProperties": false,
+      "properties": {
+        "x": { "type": "number" },
+        "y_top": { "type": "number" },
+        "y_bottom": { "type": "number" }
+      }
+    },
+    "quadrant": {
+      "type": "object",
+      "required": ["width", "height"],
+      "additionalProperties": false,
+      "properties": {
+        "width": { "type": "number", "exclusiveMinimum": 0 },
+        "height": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+    "digits": {
+      "type": "object",
+      "required": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+      "additionalProperties": false,
+      "properties": {
+        "0": { "$ref": "#/definitions/digit" },
+        "1": { "$ref": "#/definitions/digit" },
+        "2": { "$ref": "#/definitions/digit" },
+        "3": { "$ref": "#/definitions/digit" },
+        "4": { "$ref": "#/definitions/digit" },
+        "5": { "$ref": "#/definitions/digit" },
+        "6": { "$ref": "#/definitions/digit" },
+        "7": { "$ref": "#/definitions/digit" },
+        "8": { "$ref": "#/definitions/digit" },
+        "9": { "$ref": "#/definitions/digit" }
+      }
+    }
+  },
+  "definitions": {
+    "point": {
+      "type": "array",
+      "items": { "type": "number" },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "polyline": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/point" },
+      "minItems": 2
+    },
+    "digit": {
+      "type": "object",
+      "required": ["segments"],
+      "additionalProperties": false,
+      "properties": {
+        "segments": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/polyline" }
+        }
+      }
+    }
+  }
+}

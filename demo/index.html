@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cistercian Numeral Font Demo</title>
+    <link rel="stylesheet" href="demo.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Cistercian Numeral Font</h1>
+      <p>
+        Loads <code>Cistercian-Regular.woff2</code> as a CSS fallback font and
+        addresses its precomposed glyphs directly (Supplementary PUA-A,
+        U+F0000-U+F270F). Build it first with <code>cistercian build</code>.
+      </p>
+    </header>
+
+    <main>
+      <section id="number-converter">
+        <h2>Number converter</h2>
+        <label for="number-input">Number (0-9999)</label>
+        <input id="number-input" type="number" min="0" max="9999" value="9230" />
+        <div id="number-output" class="numeral-display"></div>
+      </section>
+
+      <section id="letter-converter">
+        <h2>Letter converter</h2>
+        <label for="letter-input">Text (A-Z, a-z)</label>
+        <input id="letter-input" type="text" value="Cistercian" />
+        <div id="letter-output" class="letter-display"></div>
+      </section>
+
+      <section id="chart">
+        <h2>0-9999 chart</h2>
+        <div class="chart-controls">
+          <button id="chart-prev" type="button">&larr; Prev</button>
+          <label for="chart-page">Page (100 per page)</label>
+          <input id="chart-page" type="number" min="0" max="99" value="0" />
+          <button id="chart-next" type="button">Next &rarr;</button>
+        </div>
+        <div id="chart-grid" class="chart-grid"></div>
+      </section>
+    </main>
+
+    <script src="demo.js"></script>
+  </body>
+</html>

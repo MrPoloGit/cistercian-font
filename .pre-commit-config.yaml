@@ -1,0 +1,28 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.11.2
+    hooks:
+      - id: mypy
+        additional_dependencies: [fonttools, shapely, jsonschema]
+        args: [--strict]
+        files: ^src/
+  - repo: local
+    hooks:
+      - id: validate-spec
+        name: validate spec/*.json against their JSON Schema
+        entry: python3 -c "from cistercian.geometry import load_digit_spec; from cistercian.features import load_letter_spec; load_digit_spec('spec/digits.json'); load_letter_spec('spec/letters.json')"
+        language: system
+        pass_filenames: false
+        files: ^spec/
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-json
