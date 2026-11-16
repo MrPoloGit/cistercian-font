@@ -4,12 +4,12 @@
   "stroke_width": 60,
   "stave": {
     "x": 350,
-    "y_top": 900,
-    "y_bottom": 100
+    "y_top": 950,
+    "y_bottom": 50
   },
   "quadrant": {
-    "width": 280,
-    "height": 280
+    "width": 220,
+    "height": 220
   },
   "digits": {
     "0": {
