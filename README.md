@@ -4,6 +4,7 @@ A font that renders Cistercian numerals (1-9999, plus a bare stave for 0)
 and letters A-Z as numerals. It follows the Under-ConScript Unicode
 Registry (UCSUR) proposal by Paul Hardy and Rebecca Bettencourt (2020), and
 can be used standalone, as a CSS fallback font, or merged into another font.
+It can be viewed online [here](https://mrpologit.github.io/cistercian-font/).
 
 ## Install
 
